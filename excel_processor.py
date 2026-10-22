@@ -32,3 +32,13 @@ class ExcelProcessor:
     def save_workbook(self, workbook):
         #Sauvegarde les modifications dans un nouveau dossier xlsx.
         workbook.save(self.output_file)
+
+    def process_file(self):
+        #Appelle les methodes en ordre.
+
+        workbook, sheet = self.load_workbook()
+        try:
+            self.process_comments(sheet)
+            self.save_workbook(workbook)
+        finally:
+            workbook.close()
