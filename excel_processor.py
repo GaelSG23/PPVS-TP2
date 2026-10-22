@@ -7,3 +7,11 @@ class ExcelProcessor:
         self.input_file = input_file
         self.output_file = output_file
         self.analyzer = analyzer
+
+    def load_workbook(self):
+        #Ouvre le dossier excel avec le chemin et retourne la première page et le dossier.
+
+        workbook = load_workbook(self.input_file)
+        sheet = workbook.active
+
+        return workbook, sheet
