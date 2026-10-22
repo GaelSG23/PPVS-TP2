@@ -1,0 +1,11 @@
+Commande à executer dans le projet
+
+
+python -m venv .venv
+
+.\.venv\Scripts\Activate.ps1
+
+python -m pip install --upgrade pip
+
+python -m pip install transformers torch openpyxl
+
